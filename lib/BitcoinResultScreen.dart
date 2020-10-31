@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'Utilities/tools.dart';
 
 class BitcoinResultScreen extends StatefulWidget {
   @override
@@ -16,7 +17,7 @@ class _BitcoinResultScreenState extends State<BitcoinResultScreen> {
       body: Column(
         children: [
           Text(
-            'Bitcoin results',
+            ConversionTools.string1(),
           ),
         ],
       ),

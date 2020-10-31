@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'DollarResultsScreen.dart';
+import 'Utilities/tools.dart';
 
 class DollarsScreen extends StatefulWidget {
   @override
@@ -22,12 +23,13 @@ class _DollarsScreenState extends State<DollarsScreen> {
                 TextFormField(
                     keyboardType: TextInputType.number,
                     inputFormatters: <TextInputFormatter>[
-                      FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
+                      FilteringTextInputFormatter.allow(RegExp(r'[0-9.]')),
                     ],
-                    validator: (text) {
-                      if (text == null || text.isEmpty) {
-                        return 'Text is empty';
+                    validator: (userDollars) {
+                      if (userDollars == null || userDollars.isEmpty) {
+                        return 'No Dollars to convert!';
                       }
+                      bitcoins = double.parse(userDollars);
                       return null;
                     }),
                 RaisedButton(

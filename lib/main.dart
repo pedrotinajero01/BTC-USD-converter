@@ -10,8 +10,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Counter App',
-      home: MyHomePage(title: 'Counter App Home Page'),
+      title: 'BTC-USD Conversion App',
+      home: MyHomePage(title: 'BTC-USD Conversion'),
     );
   }
 }
@@ -26,14 +26,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

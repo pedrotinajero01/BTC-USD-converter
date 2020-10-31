@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'Utilities/tools.dart';
 
 class DollarResultsScreen extends StatefulWidget {
   @override
@@ -16,7 +17,7 @@ class _DollarResultsScreenState extends State<DollarResultsScreen> {
       body: Column(
         children: [
           Text(
-            'Dollar results',
+            ConversionTools.string2(),
           ),
         ],
       ),

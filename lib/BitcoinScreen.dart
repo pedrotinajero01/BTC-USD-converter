@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'BitcoinResultScreen.dart';
+import 'Utilities/tools.dart';
 
 class BitcoinScreen extends StatefulWidget {
   @override
@@ -22,16 +23,17 @@ class _BitcoinScreenState extends State<BitcoinScreen> {
                 TextFormField(
                     keyboardType: TextInputType.number,
                     inputFormatters: <TextInputFormatter>[
-                      FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
+                      FilteringTextInputFormatter.allow(RegExp(r'[0-9.]')),
                     ],
-                    validator: (text) {
-                      if (text == null || text.isEmpty) {
-                        return 'Text is empty';
+                    validator: (userBitcoins) {
+                      if (userBitcoins == null || userBitcoins.isEmpty) {
+                        return 'No Bitcoins to convert!';
                       }
+                      dollars = double.parse(userBitcoins);
                       return null;
                     }),
                 RaisedButton(
-                    child: Text('Convert to Bitcoins'),
+                    child: Text('Convert to Dollars'),
                     onPressed: () {
                       if (_formKey.currentState.validate()) {
                         Navigator.push(
