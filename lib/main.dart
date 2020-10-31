@@ -37,12 +37,14 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             RaisedButton(
+                key: Key('usdButton'),
                 child: Text('USD to BTC'),
                 onPressed: () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => DollarsScreen()));
                 }),
             RaisedButton(
+                key: Key('btcButton'),
                 child: Text('BTC to USD'),
                 onPressed: () {
                   Navigator.push(context,

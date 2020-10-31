@@ -18,6 +18,7 @@ class _DollarResultsScreenState extends State<DollarResultsScreen> {
         children: [
           Text(
             ConversionTools.string2(),
+            key: Key('usdResult'),
           ),
         ],
       ),

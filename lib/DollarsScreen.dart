@@ -21,6 +21,7 @@ class _DollarsScreenState extends State<DollarsScreen> {
               key: _formKey,
               child: Column(children: <Widget>[
                 TextFormField(
+                    key: Key('usdText'),
                     keyboardType: TextInputType.number,
                     inputFormatters: <TextInputFormatter>[
                       FilteringTextInputFormatter.allow(RegExp(r'[0-9.]')),
@@ -33,6 +34,7 @@ class _DollarsScreenState extends State<DollarsScreen> {
                       return null;
                     }),
                 RaisedButton(
+                    key: Key('usdConvert'),
                     child: Text('Convert to Bitcoins'),
                     onPressed: () {
                       if (_formKey.currentState.validate()) {
